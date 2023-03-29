@@ -1,0 +1,15 @@
+{
+  "name": "Alisquare-client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite --host --port $PORT",
+    "dev": "vite --host --port $PORT",
+    "build": "vite build",
+    "preview": "vite preview --port $PORT"
+  },
+  "devDependencies": {
+    "vite": "^4.0.0"
+  }
+}

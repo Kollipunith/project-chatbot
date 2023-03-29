@@ -1,0 +1,56 @@
+image: node:18
+pipelines:
+  branches:
+    master:
+      # - step:
+      #     name: Backend
+      #     caches:
+      #       - node
+      #     script:
+      #       - cd server
+      #       - rm -rf package-lock.json
+      #       - rm -rf node_modules
+      #       - npm install
+            # - npm run server
+      - step:
+          name: FE
+          caches:
+            - node
+          script:
+            - rm -rf package-lock.json
+            - rm -rf node_modules
+            - npm install
+            # - npm run build
+      - step:
+          name: Build
+          script:
+            # - cd client
+            - git archive --format=tar.gz master -o sample-app.tar.gz
+          artifacts:
+            - sample-app.tar.gz
+          # artifacts:
+          #   - dist/**
+          # caches:
+          #   - node
+            # - cp -a dist/. public/
+          # artifacts:
+          #     - public
+            # - npm run dev
+      # - step:
+      #     name: Create artifact
+      #     script: 
+      #       - tar czfv application.tgz
+          # artifacts: 
+          #   - application.tar.gz
+      - step:
+           name: Deploy to heroku
+           deployment: production
+           caches:
+             - node
+           script:
+             - pipe: atlassian/heroku-deploy:2.0.0
+               variables:
+                 HEROKU_API_KEY: $HEROKU_API_KEY_CLIENT
+                 HEROKU_APP_NAME: $HEROKU_APP_NAME_CLIENT
+                 ZIP_FILE: sample-app.tar.gz
+                 WAIT: 'true'
