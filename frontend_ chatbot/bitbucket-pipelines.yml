@@ -33,7 +33,7 @@ pipelines:
           # caches:
           #   - node
             # - cp -a dist/. public/
-          # artifacts:
+          # artifacts:-
           #     - public
             # - npm run dev
       # - step:
