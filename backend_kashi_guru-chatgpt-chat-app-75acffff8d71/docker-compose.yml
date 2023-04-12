@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  client:
+    build: 
+      context: ./client
+      # dockerfile: dockerfile
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    ports:
+      - '3000:3000'
+  server:
+    build: 
+      context: ./server
+      environment:
+      - OPENAI_API_KEY=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
+      # dockerfile: dockerfile
+    volumes:
+      - ./server:/app
+    ports:
+      - '5001:5001'
