@@ -6,7 +6,6 @@ $ cd server
 $ npm install
 $ npm run server
 ```
-### note change the api key in .env file OPENAI_API_KEY
 
 ### Frontend
 ```
