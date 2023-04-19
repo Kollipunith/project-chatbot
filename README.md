@@ -6,7 +6,7 @@ $ cd server
 $ npm install
 $ npm run server
 ```
-### note change the api key for chat gpt in .env file OPENAI_API_KEY
+### note change the api key in .env file OPENAI_API_KEY
 
 ### Frontend
 ```
