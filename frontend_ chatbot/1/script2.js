@@ -10,7 +10,7 @@ document.getElementById('prompt_form').addEventListener('submit', async (e) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer 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'
+                'Authorization': 'Bearer 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
             },
             body: JSON.stringify({
                 prompt: userInput,
