@@ -10,7 +10,7 @@ document.getElementById('prompt_form').addEventListener('submit', async (e) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer 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'
+                'Authorization': 'Bearer sk-'
             },
             body: JSON.stringify({
                 prompt: userInput,
@@ -22,7 +22,7 @@ document.getElementById('prompt_form').addEventListener('submit', async (e) => {
             const data = await response.json();
             const generatedPrompt = data.choices[0].text.trim();
 
-         promptContainer.innerHTML += `
+            promptContainer.innerHTML += `
     <div class="message sender"><img src="sender.jpg" alt="sender avatar" /><p><strong>User input:</strong> ${userInput}</p></div>
     <div class="message receiver"><p><strong>Generated prompt:</strong> ${generatedPrompt}</p><img src="receiver.jpeg" alt="receiver avatar" /></div>
 `;
