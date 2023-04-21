@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI Prompt Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #010101;
+            margin: 0;
+            padding: 0;
+        }
+
+        #app {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        #prompt_container {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        #prompt_form {
+            display: flex;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        textarea {
+            flex: 1;
+            resize: none;
+            padding: 10px;
+            border: none;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .message {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .message img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .sender {
+            justify-content: flex-start;
+        }
+
+        .sender p {
+            background-color: #c2e0ff;
+            margin-left: 10px;
+        }
+
+        .receiver {
+            justify-content: flex-end;
+        }
+
+        .receiver p {
+            background-color: #ffffff;
+            margin-right: 10px;
+        }
+
+        p {
+            padding: 10px;
+            border-radius: 15px;
+            margin: 0;
+            max-width: 70%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="prompt_container"></div>
+        <form id="prompt_form">
+            <textarea name="user_input" placeholder="Enter your prompt..."></textarea>
+            <button type="submit"><img src="default.webp" alt="send" /></button>
+        </form>
+    </div>
+    <script src="script2.js"></script>
+</body>
+
+</html>
