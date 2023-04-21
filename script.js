@@ -95,7 +95,7 @@ const handleSubmit = async (e) => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer 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'
+            'Authorization': 'Bearer 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'
         },
         body: JSON.stringify({
             prompt: userPrompt,
